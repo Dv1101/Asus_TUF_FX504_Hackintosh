@@ -249,10 +249,13 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 
 **These values are masked from the provided config file, make sure you enter your own before testing!**
 
-### UpdateDataHub `Boolean` `Enable`
-### UpdateNVRAM `Boolean` `Enable`
-### UpdateSMBIOS `Boolean` `Enable`
-### UpdateSMBIOSMode `String` `Create`
+**UpdateDataHub `Boolean` `Enable`**
+
+**UpdateNVRAM `Boolean` `Enable`**
+
+**UpdateSMBIOS `Boolean` `Enable`**
+
+**UpdateSMBIOSMode `String` `Create`**
 
 
 ## UEFI
