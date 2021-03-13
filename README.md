@@ -117,6 +117,7 @@ Not needed in this build
 | framebuffer-con1-pipe | DATA | 12000000 |
 | framebuffer-con1-preferred-lspcon-mode | DATA | 01000000 |
 | framebuffer-con1-type | DATA | 00080000 |
+| framebuffer-patch-enable | DATA | 01000000 |
 | model | String | Intel UHD 630 |
 
 | PciRoot(0x0)/Pci(0x1f,0x3) | Dictionary | Keys / Values |
