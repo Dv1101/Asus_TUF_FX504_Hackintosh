@@ -108,7 +108,7 @@ Not needed in this build
 | device-id | DATA | 9B3E0000 |
 | AAPL,slot-name | String | Internal@0,2,0 |
 | enable-hdmi20 | DATA | 01000000 |
-| framebuffer-unifiedmem | DATA | 00000080 |
+| framebuffer-unifiedmem | DATA | 000080BE |
 | framebuffer-con1-busid | DATA | 01000000 |
 | framebuffer-con1-enable | DATA | 01000000 |
 | framebuffer-con1-flags | DATA | 87010000 |
@@ -116,7 +116,6 @@ Not needed in this build
 | framebuffer-con1-index | DATA | 01000000 |
 | framebuffer-con1-pipe | DATA | 12000000 |
 | framebuffer-con1-preferred-lspcon-mode | DATA | 01000000 |
-| framebuffer-unifiedmem | DATA | 000080BE |
 | framebuffer-con1-type | DATA | 00080000 |
 | model | String | Intel UHD 630 |
 
