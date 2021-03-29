@@ -1,6 +1,6 @@
 WORKING PERFECT on OpenCore 0.6.4
 
-OpenCore 0.6.6 its on plan, but I'm very busy with studies, soo you would need to wait a few weeks, maybe for OpenCore 0.6.7 🤷🏼‍♂️, sorry.
+OpenCore 0.6.8 its on plan, so stay active for that 🔥🔥
 
 ## Specs:
 | Component | Name |
