@@ -160,7 +160,7 @@ Ignore
 Ignore
 
 ### Force
-We don't need to force any kext to load, so ignore
+We need to force `IO80211Family.kext` from `System/Library/Extensions` to have Airportitlwm.kext complete support.
 
 ### Patch
 Ignore
