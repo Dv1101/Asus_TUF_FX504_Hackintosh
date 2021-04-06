@@ -1,6 +1,4 @@
-WORKING PERFECT on OpenCore 0.6.4
-
-OpenCore 0.6.8 its on plan, so stay active for that 🔥🔥
+OpenCore 0.6.8 its here 🔥🔥
 
 ## Specs:
 | Component | Name |
@@ -22,7 +20,7 @@ OpenCore 0.6.8 its on plan, so stay active for that 🔥🔥
 
 ### Working
 - [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.1**
-- [x] **Wifi** (Thanks to [itlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and after installing the OS with app [HeliPort.app](https://github.com/OpenIntelWireless/HeliPort/releases))
+- [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from macOS system the `IO80211Family.kext`
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
 - [x] **USB:** All internal and external ports (Thanks to SSDT-EC-USBX-LAPTOP.aml)
@@ -160,7 +158,7 @@ Ignore
 Ignore
 
 ### Force
-We need to force `IO80211Family.kext` from `System/Library/Extensions` to have Airportitlwm.kext complete support.
+We need to force `IO80211Family.kext` from `System/Library/Extensions` to have complete support of Airportitlwm.kext for WiFi.
 
 ### Patch
 Ignore
@@ -257,6 +255,7 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 
 **UpdateSMBIOSMode `String` `Create`**
 
+**UseRawUuidEncoding** `Boolean` `False`**
 
 ## UEFI
 ### ConnectDrivers `Boolean` `enabled`
