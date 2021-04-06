@@ -85,7 +85,8 @@ Not needed
 1. `Rename _OSI to XOSI`
 
 ### Quirks
-Not needed in this build
+**Enabled:**
+1. `ResetLogoStatus` (Without this enabled backlight will not work for the first 1 minute)
 
 ## Booter
 ### Quirks
