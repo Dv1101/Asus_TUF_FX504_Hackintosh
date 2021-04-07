@@ -19,7 +19,7 @@ OpenCore 0.6.8 its here 🔥🔥
 [Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
 
 ### Working
-- [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.1**
+- [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.2.3**
 - [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
