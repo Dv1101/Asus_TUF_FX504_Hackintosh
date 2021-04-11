@@ -1,4 +1,10 @@
-OpenCore 0.6.8 its here 🔥🔥
+# Complete OC Guide for **Asus FX504Gx** models
+
+**This guide its updated for OpenCore 0.6.8 and tested with macOS Big Sur 11.2.3**
+
+![Asus FX504GE running macOS Big Sur](/Images/AsusFX504-macOS.png)
+[Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
+
 
 ## Specs:
 | Component | Name |
@@ -16,7 +22,6 @@ OpenCore 0.6.8 its here 🔥🔥
 | Trackpad: | ELAN1200 Precision TouchPad (HID Type) |
 | Keyboard: | Standard PS/2 Keyboard |
 
-[Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
 
 ### Working
 - [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.2.3**
