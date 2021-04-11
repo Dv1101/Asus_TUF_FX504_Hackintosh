@@ -2,7 +2,7 @@
 
 **This guide its updated for OpenCore 0.6.8 and tested with macOS Big Sur 11.2.3**
 
-![Asus FX504GE running macOS Big Sur](/Images/AsusFX504-macOS.png)
+![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
 [Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
 
 
@@ -22,6 +22,8 @@
 | Trackpad: | ELAN1200 Precision TouchPad (HID Type) |
 | Keyboard: | Standard PS/2 Keyboard |
 
+![Asus FX504GE Layout](/Images/Guide/Asus-FX504GE-layout.png)
+These are all the external ports of the laptop. (**They all work**)
 
 ### Working
 - [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.2.3**
@@ -41,8 +43,13 @@
 - Continuity Features (not working for now, waiting on https://openintelwireless.github.io/).
 
 
+```bash
+```
 
 # INSTALLATION GUIDE
+
+```bash
+```
 
 ## Creating Booteable USB
 
@@ -65,12 +72,15 @@
 
 [**Dortania's Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html)
 
+```bash
+```
 
 # BIOS Settings:
 - Make Sure you have [Latest BIOS v320](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
 
-
+```bash
+```
 
 # OPENCORE Config.plist
 
@@ -291,6 +301,8 @@ Ignore
 2. `ReleaseUsbOwnership` (Mainly for USB fixes)
 3. `RequestBootVarRouting` (Redirects some Variables for macOS)
 
+```bash
+```
 
 # Post Install (Important!!)
 Open Terminal.app and run those commands:
@@ -298,7 +310,8 @@ Open Terminal.app and run those commands:
 sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
 sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ```
-
+```bash
+```
 
 # BenchMarks:
 ### Cinebench R23:
@@ -308,3 +321,18 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ![GeekBench 5_CPU Score](/Images/Benchmarks/GeekBench5_CPU.png)
 ![GeekBench 5_GPU Score](/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
+
+```bash
+```
+
+# Credits
+
+[Apple (macOS)](https://apple.com)
+
+[OpenCore Team (Bootloader)](https://github.com/acidanthera/OpenCorePkg)
+
+[Dortania (Guide)](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#starting-point)
+
+[PoomSmart (Some ideas for my build)](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh)
+
+[MegaStood (Properties and boot argument for HDMI output)](https://github.com/MegaStood/Hackintosh-FX504GE-ES72)
