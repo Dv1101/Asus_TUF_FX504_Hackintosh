@@ -327,12 +327,12 @@ https://browser.geekbench.com/v5/cpu/5707123
 
 # Credits
 
-[Apple (macOS)](https://apple.com)
+[Apple](https://apple.com) (macOS)
 
-[OpenCore Team (Bootloader)](https://github.com/acidanthera/OpenCorePkg)
+[OpenCore Team](https://github.com/acidanthera/OpenCorePkg) (Bootloader)
 
-[Dortania (Guide)](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#starting-point)
+[Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#starting-point) (Guide)
 
-[PoomSmart (Some ideas for my build)](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh)
+[PoomSmart](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh) (Some ideas for my build)
 
-[MegaStood (Properties and boot argument for HDMI output)](https://github.com/MegaStood/Hackintosh-FX504GE-ES72)
+[MegaStood](https://github.com/MegaStood/Hackintosh-FX504GE-ES72) (Properties and boot argument for HDMI output)
