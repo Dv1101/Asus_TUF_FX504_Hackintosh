@@ -1,4 +1,4 @@
-# Complete OC Guide for **Asus FX504Gx** models
+# Complete Hackintosh Guide for **Asus FX504GE** and **GD** models
 
 **This guide its updated for OpenCore 0.6.8 and tested with macOS Big Sur 11.2.3**
 
