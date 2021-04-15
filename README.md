@@ -3,6 +3,7 @@
 **This guide its updated for OpenCore 0.6.8 and tested with macOS Big Sur 11.2.3**
 
 ![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
+
 [Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
 
 
