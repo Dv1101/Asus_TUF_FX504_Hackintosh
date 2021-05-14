@@ -32,7 +32,7 @@ These are all the external ports of the laptop. (**They all work**)
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
 - [x] **USB:** All internal and external ports (Thanks to SSDT-EC-USBX-LAPTOP.aml)
-- [x] **Ethernet:** Realtek RTL8111 (Thanks to RealtekRTL8111.kext
+- [x] **Ethernet:** Realtek RTL8111 (Thanks to RealtekRTL8111.kext)
 - [x] **Trackpad:** (Working thanks to VoodooI2C.kext, VoodooI2CHID.kext and SSDT-XOSI.aml)
 - [x] **HDMI:** Works almost perfect. 
 - [x] **Shutdown:** Yes
@@ -49,8 +49,7 @@ These are all the external ports of the laptop. (**They all work**)
 
 # INSTALLATION GUIDE
 
-```bash
-```
+---
 
 ## Creating Booteable USB
 
@@ -73,15 +72,13 @@ These are all the external ports of the laptop. (**They all work**)
 
 [**Dortania's Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html)
 
-```bash
-```
+---
 
 # BIOS Settings:
 - Make Sure you have [Latest BIOS v320](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
 
-```bash
-```
+---
 
 # OPENCORE Config.plist
 
@@ -159,7 +156,6 @@ Not needed
 2. [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) (Second)
    - SMCProcessor
    - SMCSuperIO
-   - SMCLightSensor (maybe not)
    - SMCBatteryManager
 3. [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) (Graphics)
 4. [VoodooPS2Controller](https://github.com/acidanthera/VoodooPS2/releases) (PS/2 keyboard)
@@ -302,8 +298,7 @@ Ignore
 2. `ReleaseUsbOwnership` (Mainly for USB fixes)
 3. `RequestBootVarRouting` (Redirects some Variables for macOS)
 
-```bash
-```
+---
 
 # Post Install (Important!!)
 Open Terminal.app and run those commands:
@@ -311,8 +306,7 @@ Open Terminal.app and run those commands:
 sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
 sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ```
-```bash
-```
+---
 
 # BenchMarks:
 ### Cinebench R23:
@@ -323,8 +317,7 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ![GeekBench 5_GPU Score](/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
 
-```bash
-```
+---
 
 # Credits
 
