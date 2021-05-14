@@ -27,7 +27,7 @@
 These are all the external ports of the laptop. (**They all work**)
 
 ### Working
-- [x] **Tested with macOS Mojave 10.14.4, Catalina 10.15.6 and Big Sur 11.2.3**
+- [x] **Tested with macOS Mojave 10.14.4, and from Catalina 10.15.6 to Big Sur 11.4**
 - [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
