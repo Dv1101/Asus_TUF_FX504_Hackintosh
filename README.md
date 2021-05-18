@@ -1,6 +1,6 @@
-# Complete Hackintosh Guide for **Asus FX504GE** and **GD** models
+# Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide its updated for OpenCore 0.6.8 and tested with macOS Big Sur 11.2.3**
+**This guide its updated for OpenCore 0.6. and tested with macOS Big Sur 11.3.1**
 
 ![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
 
