@@ -1,6 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide its updated for OpenCore 0.6.9 and tested with macOS Big Sur 11.3.1**
+**This guide its updated for OpenCore 0.7.0 and tested with macOS Big Sur 11.4**
 
 ![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
 
@@ -99,7 +99,7 @@ Not needed
 
 ### Quirks
 **Enabled:**
-1. `ResetLogoStatus` (Without this enabled backlight will not work for the first 1 minute)
+1. `ResetLogoStatus` (Recomended)
 
 ## Booter
 ### Quirks
@@ -215,7 +215,7 @@ Remove from `EFI/OC/Tools` everything
 ### Add
 | 7C436110-AB2A-4BBB-A880-FE41995C9F82 | Dictionary | Keys / Values |
 |:--- |:---:|:--- |
-| boot-args  | String | -v keepsyms=1 debug=0x100 alcid=3 -wegnoegpu -igfxnohdmi agdpmod=vit9696 |
+| boot-args  | String | -v keepsyms=1 debug=0x100 alcid=3 -wegnoegpu -igfxnohdmi -igfxblr agdpmod=vit9696 |
 | run-efi-updater | String | No |
 | csr-active-config | DATA | 00000000 |
 | prev-lang:kbd | String | en-US:0 |   
@@ -226,6 +226,7 @@ Remove from `EFI/OC/Tools` everything
    - `alcid=3` (Sets de audio to port 3)
    - `-wegnoegpu` (Disable dGPU GTX 1050 Ti)
    - `-igfxnohdmi` ()
+   - `-igfxblr` (Fix Backlight on Coffe Lake laptops)
    - `agdpmod=vit9696` (Disable board-id checker **ESSENTIAL FOR HDMI OUTPUT**)
 - `run-efi-updater` (Disable macOS updates to EFI)
 - `csr-active-config` (SIP configuration (Enabled), For more: [Disabling SIP](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#disabling-sip))
@@ -250,13 +251,13 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 |:--- |:---:|:--- |
 | AdviseWindows  | Boolean | False |
 | SystemMemoryStatus | String | Auto |
-| MLB | String | *Your own with GenSMBIOS* |
+| MLB | String | *Generate your own with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)* |
 | ProcessorType | Number | 0 |
-| ROM | DATA | *Your own with GenSMBIOS* |
+| ROM | DATA | *[Your own MAC Address](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#derive-the-corresponding-rom-value)* |
 | SpoofVendor | Boolean | True |
 | SystemProductName | String | MacBookPro15,3 |
-| SystemSerialNumber | String | *Your own with GenSMBIOS* |
-| SystemUUID | String | *Your own with GenSMBIOS* |
+| SystemSerialNumber | String | *Generate your own with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)* |
+| SystemUUID | String | *Generate your own with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)* |
 
 **These values are masked from the provided config file, make sure you enter your own before testing!**
 
