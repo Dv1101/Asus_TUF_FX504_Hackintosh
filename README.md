@@ -54,7 +54,7 @@ These are all the external ports of the laptop. (**They all work**)
 ## Making the Booteable USB
 
 ### From macOS:
-[*Installation Guide Apple Page*](https://support.apple.com/en-us/HT201372)
+[**Link to Apple's Guide**](https://support.apple.com/en-us/HT201372)
 
 **Download installers:** [Monterrey Beta 2](http://swcdn.apple.com/content/downloads/54/23/071-59953-A_U9D4NB05NR/nqzt71pnylsuux326a4vqexb33oz0auhas/InstallAssistant.pkg)(Execute de .pkg to extract the installer) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
 
@@ -88,8 +88,7 @@ These are all the external ports of the laptop. (**They all work**)
 
 # OpenCore Configuration
 
-## [How it's my config.plist and what does each thing](/config.plist.md)
-
+## [Here it's my config.plist and the explanation](/config.plist.md)
 #### [ACPI](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#acpi)
 #### [Booter](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#booter)
 #### [DeviceProperties](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#deviceproperties)
@@ -110,10 +109,10 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ---
 
 # BenchMarks:
-### Cinebench R23:
+#### Cinebench R23:
 ![Cinebench R23](/Images/Benchmarks/Cinebench_R23.png)
 
-### GeekBench 5:
+#### GeekBench 5:
 ![GeekBench 5_CPU Score](/Images/Benchmarks/GeekBench5_CPU.png)
 ![GeekBench 5_GPU Score](/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
