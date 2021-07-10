@@ -58,7 +58,7 @@ These are all the external ports of the laptop. (**They all work**)
 
 **Download installers:** [Monterrey Beta 2](http://swcdn.apple.com/content/downloads/54/23/071-59953-A_U9D4NB05NR/nqzt71pnylsuux326a4vqexb33oz0auhas/InstallAssistant.pkg) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
 
-1. Connect a <=16 GB pendrive.
+1. Connect a >=16 GB pendrive.
 2. Open *Disk Utility* and Erase the USB with the name: *MyVolume*.
 3. Open *Terminal* and use the proper commands for your macOS installer:
 - Monterrey: `sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` (Be sure to place the installer on Applications folder (More info here: [MrMachintosh.com](https://mrmacintosh.com/macos-12-monterey-full-installer-database-download-directly-from-apple/)))
