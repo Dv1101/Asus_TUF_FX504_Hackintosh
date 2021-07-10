@@ -88,7 +88,7 @@ These are all the external ports of the laptop. (**They all work**)
 
 # OpenCore Configuration
 
-## [Here it's my config.plist and the explanation](/config.plist.md)
+## [Here it's my config.plist and the explanation:](/config.plist.md)
 #### [ACPI](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#acpi)
 #### [Booter](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#booter)
 #### [DeviceProperties](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#deviceproperties)
