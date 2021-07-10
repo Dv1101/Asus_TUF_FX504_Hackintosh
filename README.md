@@ -1,6 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide its updated for OpenCore 0.7.0 and tested with macOS Big Sur 11.4**
+**This guide its updated for OpenCore 0.7.1 and tested on my main device.**
 
 ![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
 
@@ -27,7 +27,7 @@
 These are all the external ports of the laptop. (**They all work**)
 
 ### Working
-- [x] **Tested with macOS Mojave 10.14.4, and from Catalina 10.15.6 to Big Sur 11.4**
+- [x] **Tested with macOS Mojave, Catalina, Big Sur, and Monterrey**
 - [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
@@ -202,7 +202,7 @@ Ignore
 **Enabled:**
 1. `AllowNvramReset` (For RESET the NVRAM on picker selector)
 2. `AllowSetDefault` (Default disk for multiboot)
-3. `BlacklistAppleUpdate` (Stop reciving some sensitive updates)
+3. `BlacklistAppleUpdate` (Stop reciving updates for Macs BIOS)
 - `ScanPolicy` 0
 - `SecureBootModel` Default
 - `Vault` Optional
@@ -215,7 +215,7 @@ Remove from `EFI/OC/Tools` everything
 ### Add
 | 7C436110-AB2A-4BBB-A880-FE41995C9F82 | Dictionary | Keys / Values |
 |:--- |:---:|:--- |
-| boot-args  | String | -v keepsyms=1 debug=0x100 alcid=3 -wegnoegpu -igfxnohdmi -igfxblr agdpmod=vit9696 |
+| boot-args  | String | -v keepsyms=1 debug=0x100 alcid=3 -wegnoegpu  -igfxnohdmi -igfxblr agdpmod=vit9696 |
 | run-efi-updater | String | No |
 | csr-active-config | DATA | 00000000 |
 | prev-lang:kbd | String | en-US:0 |   
@@ -226,7 +226,7 @@ Remove from `EFI/OC/Tools` everything
    - `alcid=3` (Sets de audio to port 3)
    - `-wegnoegpu` (Disable dGPU GTX 1050 Ti)
    - `-igfxnohdmi` ()
-   - `-igfxblr` (Fix Backlight on Coffe Lake laptops)
+   - `-igfxblr` (Fix Backlight issue on Coffe Lake laptops)
    - `agdpmod=vit9696` (Disable board-id checker **ESSENTIAL FOR HDMI OUTPUT**)
 - `run-efi-updater` (Disable macOS updates to EFI)
 - `csr-active-config` (SIP configuration (Enabled), For more: [Disabling SIP](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#disabling-sip))
@@ -283,6 +283,7 @@ For now leave everything default
 ### Drivers (must-have)
 1. `OpenRuntime.efi`
 2. `HFsPlus.efi`
+3. `OpenCanopy.efi`
 
 ### Input
 Ignore
