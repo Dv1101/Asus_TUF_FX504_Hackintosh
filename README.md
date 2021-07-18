@@ -15,10 +15,10 @@
 | RAM: | 16GB **SK Hyinix** HMA82GS6CJR8N-VK 2666Mhz |
 | iGPU: | Intel UHD 630 (Mobile) |
 | dGPU: | NVIDIA GeForce GTX 1050 Ti (DISABLED) |
-| SSD: | Samsung 970 EVO Plus |
+| NVMe: | Samsung 970 EVO Plus |
 | HDD: | HGST HTS721010A9E630 |
 | Wifi/BT: | Intel(R) Wireless-AC 9560 160MHz (Type CNVi) |
-| Audio: | Realtek ALC255 |
+| Audio: | RealTek ALC255 |
 | Ethernet: | Realtek RTL8111 |
 | Trackpad: | ELAN1200 Precision TouchPad (Type HID) |
 | Keyboard: | Standard PS/2 Keyboard |
