@@ -67,7 +67,7 @@ These are all the external ports of the laptop. (**They all work**)
 - Mojave: `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 - High Sierra: `sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-![Terminal](/DocsImages/Guide/BootableUSB.png)
+![Terminal](/Docs/Images/Guide/BootableUSB.png)
 
 ### From Windows:
 
