@@ -1,6 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide it's updated to OpenCore 0.7.1 and tested on my main device.**
+**This guide it's updated to OpenCore 0.7.2 and tested on my main device.**
 
 ![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
 
@@ -88,15 +88,15 @@ These are all the external ports of the laptop. (**They all work**)
 
 # OpenCore Configuration
 
-## [Here it's my config.plist and the explanation:](/config.plist.md)
-#### [ACPI](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#acpi)
-#### [Booter](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#booter)
-#### [DeviceProperties](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#deviceproperties)
-#### [Kernel](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#kernel)
-#### [Misc](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#misc)
-#### [NVRAM](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#nvram)
-#### [PlatformInfo](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#platforminfo)
-#### [UEFI](https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_Updated_OpenCore/blob/master/config.plist.md#uefi)
+## [Here it's my config.plist and the explanation:](/Docs/config.plist.md)
+#### [ACPI](/Docs/config.plist.md#acpi)
+#### [Booter](/Docs/config.plist.md#booter)
+#### [DeviceProperties](/Docs/config.plist.md#deviceproperties)
+#### [Kernel](/Docs/config.plist.md#kernel)
+#### [Misc](/Docs/config.plist.md#misc)
+#### [NVRAM](/Docs/config.plist.md#nvram)
+#### [PlatformInfo](/Docs/config.plist.md#platforminfo)
+#### [UEFI](/Docs/config.plist.md#uefi)
 
 ---
 
