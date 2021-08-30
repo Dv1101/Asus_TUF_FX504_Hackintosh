@@ -2,7 +2,7 @@
 
 **This guide it's updated to OpenCore 0.7.2 and tested on my main device.**
 
-![Asus FX504GE running macOS Big Sur](/Images/Asus-FX504-macOS.png)
+![Asus FX504GE running macOS Big Sur](/Docs/Images/Asus-FX504-macOS.png)
 
 [Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
 
@@ -23,7 +23,7 @@
 | Trackpad: | ELAN1200 Precision TouchPad (Type HID) |
 | Keyboard: | Standard PS/2 Keyboard |
 
-![Asus FX504GE Layout](/Images/Guide/Asus-FX504GE-layout.png)
+![Asus FX504GE Layout](/Docs/Images/Guide/Asus-FX504GE-layout.png)
 These are all the external ports of the laptop. (**They all work**)
 
 ### Working
@@ -56,7 +56,7 @@ These are all the external ports of the laptop. (**They all work**)
 ### From macOS:
 [**Link to Apple's Guide**](https://support.apple.com/en-us/HT201372)
 
-**Download installers:** [Monterrey Beta 2](http://swcdn.apple.com/content/downloads/54/23/071-59953-A_U9D4NB05NR/nqzt71pnylsuux326a4vqexb33oz0auhas/InstallAssistant.pkg)(Execute de .pkg to extract the installer) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
+**Download installers:** [Monterrey Beta 5](http://swcdn.apple.com/content/downloads/45/34/071-79810-A_PHL4H4X2JM/6mnb23uh2somxqw1jkxm2mos6op8qjcij8/InstallAssistant.pkg)(Execute de .pkg to extract the installer) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
 
 1. Connect a >=16 GB pendrive.
 2. Open *Disk Utility* and Erase the USB with the name: *MyVolume*.
@@ -67,7 +67,7 @@ These are all the external ports of the laptop. (**They all work**)
 - Mojave: `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 - High Sierra: `sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-![Terminal](Images/Guide/BootableUSB.png)
+![Terminal](/DocsImages/Guide/BootableUSB.png)
 
 ### From Windows:
 
@@ -110,11 +110,11 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 
 # BenchMarks:
 #### Cinebench R23:
-![Cinebench R23](/Images/Benchmarks/Cinebench_R23.png)
+![Cinebench R23](/Docs/Images/Benchmarks/Cinebench_R23.png)
 
 #### GeekBench 5:
-![GeekBench 5_CPU Score](/Images/Benchmarks/GeekBench5_CPU.png)
-![GeekBench 5_GPU Score](/Images/Benchmarks/GeekBench5_GPU.png)
+![GeekBench 5_CPU Score](/Docs/Images/Benchmarks/GeekBench5_CPU.png)
+![GeekBench 5_GPU Score](/Docs/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
 
 ---
