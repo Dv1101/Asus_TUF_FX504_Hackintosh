@@ -1,6 +1,22 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
 **This guide it's updated to OpenCore 0.7.2 and tested on my main device.**
+<!-- shields -->
+<div>
+    <!-- downloads -->
+    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases">
+        <img src="https://img.shields.io/github/downloads/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/total" alt="downloads"/>
+    </a>
+    <!-- version -->
+    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases/latest">
+        <img src="https://img.shields.io/github/release/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore.svg" alt="latest version"/>
+    </a>
+    <!-- platform -->
+    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore">
+        <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg" alt="platform"/>
+    </a>
+</div>
+</br></br>
 
 ![Asus FX504GE running macOS Big Sur](/Docs/Images/Asus-FX504-macOS.png)
 
