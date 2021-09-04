@@ -1,4 +1,7 @@
-
-RELEASE/EFI/OC/.DS_Store
-DEBUG/.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+._*
+opencore-*.txt
 .DS_Store
