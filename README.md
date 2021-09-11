@@ -1,6 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide it's updated to OpenCore 0.7.2 and tested on my main device.**
+**This guide it's updated to OpenCore 0.7.3 and tested on my main device.**
 <!-- shields -->
 <div>
     <!-- downloads -->
@@ -146,3 +146,7 @@ https://browser.geekbench.com/v5/cpu/5707123
 [PoomSmart](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh) (Some ideas for my build)
 
 [MegaStood](https://github.com/MegaStood/Hackintosh-FX504GE-ES72) (Properties and boot argument for HDMI output)
+
+---
+
+If this guide has been useful for you, don't forget to give me a star ⭐️❤️
