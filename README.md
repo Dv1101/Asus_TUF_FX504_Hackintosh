@@ -99,7 +99,7 @@ These are all the external ports of the laptop. (**They all work**)
 ---
 
 # BIOS Settings:
-- Make Sure you have [Latest BIOS v320](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
+- Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
 
 ---
