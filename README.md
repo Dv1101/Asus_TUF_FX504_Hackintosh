@@ -1,6 +1,5 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-## Expect all guides to be updated this month (December 2021)
 
 **This guide it's updated to OpenCore 0.7.4 and tested on my main device.**
 <!-- shields -->
