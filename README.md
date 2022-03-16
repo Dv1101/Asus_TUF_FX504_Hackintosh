@@ -1,5 +1,5 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
-
+i hope to update soon these guides since bigest release just happen macOS 12.3, the onle that shoud be launched in September 2021
 
 **This guide it's updated to OpenCore 0.7.4 and tested on my main device.**
 <!-- shields -->
