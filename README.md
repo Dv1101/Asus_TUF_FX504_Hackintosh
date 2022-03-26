@@ -1,7 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
-i hope to update soon these guides since bigest release just happen macOS 12.3, the onle that shoud be launched in September 2021
 
-**This guide it's updated to OpenCore 0.7.4 and tested on my main device.**
+**This guide it's updated to OpenCore 0.7.9 and tested on my main device.**
 <!-- shields -->
 <div>
     <!-- downloads -->
@@ -46,12 +45,12 @@ These are all the external ports of the laptop. (**They all work**)
 ### Working
 - [x] **Tested with macOS High Sierra, Mojave, Catalina, Big Sur, and Monterrey**
 - [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
-- [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases))
-- [x] **Audio:** Realtek ALC255 (Thanks to AppleALC.kext with layout-id=3 setted in Device Properties)
+- [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases) and [BlueToolFixup.kext](https://github.com/acidanthera/BrcmPatchRAM/releases))
+- [x] **Audio:** Realtek ALC255 (Thanks to [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) with layout-id=30 setted in Device Properties) without HDMI stable output connection.
 - [x] **USB:** All internal and external ports (Thanks to SSDT-EC-USBX-LAPTOP.aml)
 - [x] **Ethernet:** Realtek RTL8111 (Thanks to RealtekRTL8111.kext)
 - [x] **Trackpad:** (Working thanks to VoodooI2C.kext, VoodooI2CHID.kext and SSDT-XOSI.aml)
-- [x] **HDMI:** Works almost perfect. 
+- [x] **HDMI:** Works almost perfect wen without audio.
 - [x] **Shutdown:** Yes
 - [x] **Restart:** Yes
 - [x] **Sleep/Wake:** Yes
@@ -59,6 +58,7 @@ These are all the external ports of the laptop. (**They all work**)
 ### Not working
 - dGPU (Any support in Mojave and up).
 - Continuity Features (not working for now, waiting on https://openintelwireless.github.io/).
+- HDMI is not working correctly in combination with audio, I spent literally entire days researching on it, if you find something tell me please.
 
 
 ```bash
@@ -149,5 +149,16 @@ https://browser.geekbench.com/v5/cpu/5707123
 [MegaStood](https://github.com/MegaStood/Hackintosh-FX504GE-ES72) (Properties and boot argument for HDMI output)
 
 ---
+
+### Future info links to write here:
+https://www.tonymacx86.com/threads/uhd-630-no-hdmi-audio.265490/post-2178532
+https://github.com/acidanthera/bugtracker/issues/1189
+https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
+https://github.com/acidanthera/WhateverGreen
+https://www.tonymacx86.com/threads/an-idiots-guide-to-lilu-and-its-plug-ins.260063/#Hacktool
+
+I will look for this tomorrow
+https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/#post-1885420
+
 
 If this guide has been useful for you, don't forget to give me a star ⭐️❤️
