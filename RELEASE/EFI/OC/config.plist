@@ -768,7 +768,7 @@
 			<key>HideAuxiliary</key>
 			<false/>
 			<key>LauncherOption</key>
-			<string>Disabled</string>
+			<string>Enabled</string>
 			<key>LauncherPath</key>
 			<string>Default</string>
 			<key>PickerAttributes</key>
