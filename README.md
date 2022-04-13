@@ -1,3 +1,4 @@
+ <!-- Markdown for HTML lol: https://michelf.ca/projects/php-markdown/extra/#markdown-attr -->
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
 **This guide it's updated to OpenCore 0.7.9 and tested on my main device.**
@@ -66,12 +67,11 @@ These are all the external ports of the laptop. (**They all work**)
 
 # INSTALLATION GUIDE
 
----
-
-## Making the Booteable USB
-
-### From macOS:
-[**Link to Apple's Guide**](https://support.apple.com/en-us/HT201372)
+<!-- BOOTABLE START -->
+<details>
+<summary>Making the Booteable USB</summary>
+    <h3>From macOS:</h3>
+<p><a href="https://support.apple.com/en-us/HT201372"</a>Link to Apple's Guide</p>
 
 **Download installers:** [Monterrey](https://apps.apple.com/es/app/macos-monterey/id1576738294?mt=12) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
 
@@ -94,18 +94,21 @@ These are all the external ports of the laptop. (**They all work**)
 
 [**Link to Dortania's Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
-
----
-
-# BIOS Settings:
+ ---
+    
+</details>
+<!-- BOOTABLE END -->
+<!-- BIOS START -->
+<details>
+<summary>BIOS Settings:</summary>
 - Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
-
 ---
-
-# OpenCore Configuration
-
-## [Here it's my config.plist and the explanation:](/Docs/config.plist.md)
+</details>
+<!-- BIOS END -->
+<!-- OpenCore START -->
+<details>
+<summary>OpenCore Configuration</summary>
 #### [ACPI](/Docs/config.plist.md#acpi)
 #### [Booter](/Docs/config.plist.md#booter)
 #### [DeviceProperties](/Docs/config.plist.md#deviceproperties)
@@ -114,16 +117,21 @@ These are all the external ports of the laptop. (**They all work**)
 #### [NVRAM](/Docs/config.plist.md#nvram)
 #### [PlatformInfo](/Docs/config.plist.md#platforminfo)
 #### [UEFI](/Docs/config.plist.md#uefi)
-
 ---
-
-# Post Install (Important!!)
+</details>
+<!-- OpenCore END -->
+<!-- POST-INSTALL START -->
+<details>
+<summary>Post Install (Important!!)</summary>
 Open Terminal.app and run those commands:
-```bash
+    
+~~~
 sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
 sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
-```
+~~~
 ---
+</details>
+<!-- POST-INSTALL END -->
 
 # BenchMarks:
 #### Cinebench R23:
