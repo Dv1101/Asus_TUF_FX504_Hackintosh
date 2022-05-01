@@ -69,7 +69,7 @@ These are all the external ports of the laptop. (**They all work**)
 
 <!-- BOOTABLE START -->
 <details>
-<summary>Making the Booteable USB</summary>
+<summary><h3>►  Making the Booteable USB</h3></summary>
     <h3>From macOS:</h3>
 <p><a href="https://support.apple.com/en-us/HT201372"</a>Link to Apple's Guide</p>
 
@@ -98,17 +98,22 @@ These are all the external ports of the laptop. (**They all work**)
     
 </details>
 <!-- BOOTABLE END -->
+
 <!-- BIOS START -->
 <details>
-<summary>BIOS Settings:</summary>
+<summary><h3>►  BIOS Settings:</h3></summary>
+ 
 - Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
 ---
+ 
 </details>
 <!-- BIOS END -->
+
 <!-- OpenCore START -->
 <details>
-<summary>OpenCore Configuration</summary>
+<summary><h3>►  OpenCore Configuration</h3></summary>
+
 #### [ACPI](/Docs/config.plist.md#acpi)
 #### [Booter](/Docs/config.plist.md#booter)
 #### [DeviceProperties](/Docs/config.plist.md#deviceproperties)
@@ -118,13 +123,15 @@ These are all the external ports of the laptop. (**They all work**)
 #### [PlatformInfo](/Docs/config.plist.md#platforminfo)
 #### [UEFI](/Docs/config.plist.md#uefi)
 ---
+ 
 </details>
 <!-- OpenCore END -->
+
 <!-- POST-INSTALL START -->
 <details>
-<summary>Post Install (Important!!)</summary>
+<summary><h3>►  Post Install (Important!!)</h3></summary>
+ 
 Open Terminal.app and run those commands:
-    
 ~~~
 sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
 sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
@@ -133,7 +140,10 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 </details>
 <!-- POST-INSTALL END -->
 
-# BenchMarks:
+<!-- BENCHMARK START -->
+<details>
+<summary><h3>►  BenchMarks:</h3></summary>
+
 #### Cinebench R23:
 ![Cinebench R23](/Docs/Images/Benchmarks/Cinebench_R23.png)
 
@@ -141,8 +151,10 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 ![GeekBench 5_CPU Score](/Docs/Images/Benchmarks/GeekBench5_CPU.png)
 ![GeekBench 5_GPU Score](/Docs/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
-
 ---
+
+</details>
+<!-- BENCHMARK END -->
 
 # Credits
 
