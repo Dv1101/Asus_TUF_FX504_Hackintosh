@@ -113,9 +113,12 @@ These are all the external ports of the laptop. (**They all work**)
 <!-- OpenCore START -->
 <details>
 <summary><h3>OpenCore Configuration</h3></summary>
+ 
+<!-- ACPI START -->
+<details open>
+<summary><h4>ACPI</h4></summary>
 
-## ⋁ ACPI
-### Add
+##### Add
 1. `SSDT-PLUG.aml` (Allows for native CPU power management)
 2. `SSDT-PMC` (Enable Native NVRAM for HM370 MotherBoard)
 3. `SSDT-dGPU-Off.aml` (PowerOff GTX 1050Ti)
@@ -124,7 +127,7 @@ These are all the external ports of the laptop. (**They all work**)
 6. `SSDT-XOSI.aml` (This is for Trackpad ELAN HID)
 7. `SSDT-USBMap.aml` (All Ports Mapped Correctly)
 
-### Patch
+##### Patch
 1. `Rename _OSI to XOSI` (Important for trackpad (Without this patch trackpad is not gonna work))
  
 | 0 | Dictionary | 12 key/value pairs |
@@ -133,12 +136,17 @@ These are all the external ports of the laptop. (**They all work**)
 | Find | Data | 5F4F5349 |
 | Replace | Data | 584F5349 |
 
-### Quirks
+##### Quirks
 **Enabled:**
 1. `ResetLogoStatus` (Recomended for correctly displaying Apple logo  on Boot)
 
-## ⋁ Booter
-### Quirks
+</details>
+<!-- ACPI END -->
+<!-- Booter START -->
+<details>
+<summary><h4>Booter</h4></summary>
+ 
+##### Quirks
 **Enabled:**
 1. `AvoidRuntimeDefrag` (Fixes for common NVRAM properties)
 2. `EnableSafeModeSlide` (Needed for something called KASLR)
@@ -147,115 +155,131 @@ These are all the external ports of the laptop. (**They all work**)
 5. `SetupVirtualMap` (Fix for virtual memory accessing)
 6. `SyncRuntimePermissions` (Fix for permission memory over OpenRuntime) 
 
+</details>
+<!-- Booter END -->
+<!-- DeviceProperties START -->
+<details>
+<summary><h4>DeviceProperties</h4></summary>
 
-## ⋁ DeviceProperties
-### Add
-| PciRoot(0x0)/Pci(0x2,0x0) | Dictionary | Keys / Values |
-|:--- |:---:|:--- |
-| AAPL,ig-platform-id  | DATA | 00009B3E |
-| device-id | DATA | 9B3E0000 |
-| AAPL,slot-name | String | Internal@0,2,0 |
-| enable-hdmi20 | DATA | 01000000 |
-| framebuffer-unifiedmem | DATA | 000080BE |
-| framebuffer-con1-busid | DATA | 01000000 |
-| framebuffer-con1-enable | DATA | 01000000 |
-| framebuffer-con1-flags | DATA | 87010000 |
-| framebuffer-con1-has-lspcon | DATA | 01000000 |
-| framebuffer-con1-index | DATA | 01000000 |
-| framebuffer-con1-pipe | DATA | 12000000 |
-| framebuffer-con1-preferred-lspcon-mode | DATA | 01000000 |
-| framebuffer-con1-type | DATA | 00080000 |
-| framebuffer-patch-enable | DATA | 01000000 |
-| model | String | Intel UHD 630 |
+##### Add
+Audio Card Properties:
+| PciRoot(0x0)/Pci(0x1F,0x3) | Dictionary | Keys / Values | Info about |
+|:--- |:---:|:---:|:--- |
+| AAPL,slot-name | String | Internal@0,31,3 | Indicates Virtual Slot for Audio Card |
+| device-id | Data | 70A10000 | Giving it a Unique ID |
+| device_type | String | Audio device | Just to know what it is |
+| hda-gfx | String | onboard-1 | Indicates board that is located (1) |
+| layout-id | DATA | 1E000000 | Best layout for the best Jack 3.5 and Speakers audio quality |
 
-| PciRoot(0x0)/Pci(0x1f,0x3) | Dictionary | Keys / Values |
-|:--- |:---:|:--- |
-| layout-id  | DATA | 01000000 |
+iGPU (Integrated Graphics Processing Unit) Properties:
+| PciRoot(0x0)/Pci(0x2,0x0) | Dictionary | Keys / Values | Info about |
+|:--- |:---:|:---:|:--- |
+| AAPL,ig-platform-id  | DATA | 00009B3E | Indicates iGPU ID for macOS |
+| AAPL,slot-name | String | Internal@0,2,0 | Indicates Virtual Slot for iGPU |
+| device-id | DATA | 9B3E0000 | Fake iGPU ID (Just in case / Futureproof) |
+| agdpmod | DATA | 01000000 | Disable port checking so HDMI output works |
+| disable-external-gpu | DATA | 1000000 | Disables All GPUs Except iGPU |
+| enable-backlight-registers-fix | DATA | 1000000 | Fix for Backlight Display |
+| framebuffer-patch-enable | DATA | 01000000 | Switch for next patches |
+| framebuffer-unifiedmem | DATA | 000080BE | Makes VRAM be 3048 MB instead of the 1500 MB|
+| framebuffer-con1-enable | DATA | 01000000 | |
+| framebuffer-con1-index | DATA | 01000000 | |
+| framebuffer-con1-busid | DATA | 01000000 | |
+| framebuffer-con1-pipe | DATA | 12000000 | |
+| framebuffer-con1-type | DATA | 00080000 | Indicates that Connector 1 is HDMI |
+| framebuffer-con1-flags | DATA | 87010000 | I have no idea |
+| enable-lspcon-support | DATA | 01000000 | Switch for Enabling LSPCON Drivers |
+| framebuffer-con1-has-lspcon | DATA | 01000000 | Indicate that con1 has LSPCON |
+| framebuffer-con1-preferred-lspcon-mode | DATA | 01000000 | Makes LSPCON Default for con1 |
+| hda-gfx | String | onboard-1 | Indicates board that is located (1) |
+| model | String | Intel UHD 630 | Name Displayed Under  &rarr; About this Mac |
 
-**What does each thing:**
-- `AAPL,ig-platform-id` (iGPU Real id)
-- `device-id` (Fake id)
-- `AAPL,slot-name` (Internal iGPU Indentifier)
-- `enable-hdmi20` (Enable 4K monitors and HDR content)
-- `framebuffer-unifiedmem` (Increase VRAM from 1536 MB to 3048 MB)
-- `framebuffer-patch-enable` (Enable framebuffer patches)
-- `model` (Name Showed in *About This Mac*)
-- `layout-id` (Sets the audio port to 3)
+</details>
+<!-- DeviceProperties END -->
+<!-- Kernel START -->
+<details>
+<summary><h4>Kernel</h4></summary>
  
-
-## ⋁ Kernel
-### Add
+##### Add
 **ORDER MATTER!** Think about which kexts should load before which.
-1. [Lilu](https://github.com/acidanthera/lilu/releases) (First)
-2. [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) (Second)
-   - SMCProcessor
-   - SMCSuperIO
-   - SMCBatteryManager
-3. [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) (Graphics)
-4. [VoodooPS2Controller](https://github.com/acidanthera/VoodooPS2/releases) (PS/2 keyboard)
-5. [RealtekRTL8111](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) (LAN internet)
-6. [AppleALC](https://github.com/acidanthera/AppleALC/releases) (Audio)
-7. [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C/releases) (Trackpad Support)
-   - VoodooI2CHID
+1. [Lilu.kext](https://github.com/acidanthera/lilu/releases) (Allows kernel injection and modification )
+2. [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases) (Allows monitoring and controlling of system parameters)
+   - SMCProcessor.kext (Allow monitoring and controlling of CPU)
+   - SMCSuperIO.kext (Allow monitoring and controlling of IO(fans,WhaterPumps,etc..))
+   - SMCBatteryManager.kext (Allow monitoring and in some cases controlling battery)
+3. [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen/releases) (Graphics Driver)
+4. [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) (Audio Driver)
+5. [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) (RJ45 Driver)
+6. [VoodooPS2Controller.kext](https://github.com/acidanthera/VoodooPS2/releases) (PS/2 Driver)
+7. [VoodooI2C.kext](https://github.com/VoodooI2C/VoodooI2C/releases) (I2C Devices Driver)
+   - VoodooI2CHID.kext (Driver for this specific trackpad)
+8. [Airportitlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) (Intel WiFi Driver)
+9. [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases) (Intel Bluetooth Driver)
+   - IntelBluetoothInjector.kext (Required Enabled on Big Sur or lower, now just required but Disabled)
+10. [BlueToolFixup.kext](https://github.com/acidanthera/BrcmPatchRAM/releases) (Bluetooth Fix for Monterrey)
+11. [BrightnessKeys.kext](https://github.com/acidanthera/BrightnessKeys/releases) (Fix some of fn Keys like Brightness or Audio)
+12. [FeatureUnlock.kext](https://github.com/acidanthera/FeatureUnlock/releases) (Bring Back Handoff, UniversalControl, and other Apple Fancy Features)
 
-### Force
-We need to force `IO80211Family.kext` from `System/Library/Extensions` to have complete support of Airportitlwm.kext for WiFi.
+##### Force
+We need to force `IO80211Family.kext` from `System/Library/Extensions` to have complete support of WiFi with Airportitlwm.kext.
+| 0 | Dictionary | Keys / Values | Info about |
+|:--- |:---:|:---:|:--- |
+| BundlePath | String | System/Library/Extensions/IO80211Family.kext | Location of the Driver Loaded by Force |
+| Identifier | String | com.apple.iokit.IO80211Family | Internal Identifier |
+| ExecutablePath | String | Contents/MacOS/IO80211Family | Location of the Executable File |
 
-### Quirks
+##### Quirks
 **Enabled:**
-1. `AppleXcpmCfgLock` (We don't have options to unlock de CFG-Lock on the BIOS)
-2. `DisableIoMapper` (If you have VT-d enabled on the BIOS (Prefered))
-3. `DisableLinkeditJettison`
-4. `PanicNoKextDump`
-5. `PowerTimeoutKernelPanic`
-6. `XhciPortLimit` (Needed for USBs type XHCI)
+1. `AppleXcpmCfgLock` (We don't have options to unlock de CFG-Lock on the BIOS so this option will create a virtual CFG)
+2. `DisableLinkeditJettison` (Let Lilu.kext and other kexts run better)
+3. `PowerTimeoutKernelPanic` (Prevents kernel panics because Apple Drivers)
 
-### Security
+</details>
+<!-- Kernel END -->
+<!-- Misc START -->
+<details>
+<summary><h4>Misc</h4></summary>
+
+##### Debug
 **Enabled:**
-1. `AllowNvramReset` (For RESET the NVRAM on picker selector)
-2. `AllowSetDefault` (Default disk for multiboot)
-3. `BlacklistAppleUpdate` (Stop reciving updates for Macs BIOS)
+1. `DisableWatchDog` (Disables Timeouts on Boot wen Debug
+
+##### Security
+**Enabled:**
+2. `AllowSetDefault` (Allow setting a Default Boot entry on the picker)
+3. `BlacklistAppleUpdate` (Stop reciving firmware updates intended for real Mac hardware)
+- `DmgLoading` Signed
 - `ScanPolicy` 0
 - `SecureBootModel` Default
 - `Vault` Optional
 
-### Tools
-Remove from `EFI/OC/Tools` everything
+##### Tools
+Remove from `EFI/OC/Tools` everything. This should be a clean `key`
 
-## NVRAM
-### Add
+</details>
+<!-- Misc END -->
+<!-- NVRAM START -->
+<details>
+<summary><h4>NVRAM</h4></summary>
+ 
+##### Add
 | 7C436110-AB2A-4BBB-A880-FE41995C9F82 | Dictionary | Keys / Values |
 |:--- |:---:|:--- |
-| boot-args  | String | -v keepsyms=1 debug=0x100 alcid=3 -wegnoegpu  -igfxnohdmi -igfxblr agdpmod=vit9696 |
-| run-efi-updater | String | No |
+| boot-args  | String | |
 | csr-active-config | DATA | 00000000 |
 | prev-lang:kbd | String | en-US:0 |   
 
-**What does each thing:**
-- `boot-args` (Boot Arguments)
-   - `-v keepsyms=1 debug=0x100` (Debuging)
-   - `alcid=3` (Sets de audio to port 3)
-   - `-wegnoegpu` (Disable dGPU GTX 1050 Ti)
-   - `-igfxnohdmi` ()
-   - `-igfxblr` (Fix Backlight issue on Coffe Lake laptops)
-   - `agdpmod=vit9696` (Disable board-id checker **ESSENTIAL FOR HDMI OUTPUT**)
-- `run-efi-updater` (Disable macOS updates to EFI)
-- `csr-active-config` (SIP configuration (Enabled), For more: [Disabling SIP](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#disabling-sip))
-- `prev-lang:kbd` (Sets custom language, For more: [AppleKeyboardLayouts.txt(opens new window)](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt)
+##### WriteFlash `Enable`
+ 
+</details>
+<!-- NVRAM END -->
+<!-- PlatformInfo START -->
+<details>
+<summary><h4>PlatformInfo</h4></summary>
 
-### Delete
-Ignore
+##### Automatic `enabled`
 
-### LegacySchema
-Ignore, we have native NVRAM
-
-### WriteFlash `Enable`
-
-
-## PlatformInfo
-### Automatic `enabled`
-
-### Generic
+##### Generic
 Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), and open the *GenSMBIOS.command* with *Right-Click > Open*, follow the intructions on the Terminal Window.
 
 | Generic | Dictionary | Keys / Values |
@@ -272,33 +296,40 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 
 **These values are masked from the provided config file, make sure you enter your own before testing!**
 
-**UpdateDataHub `Boolean` `Enable`**
+UpdateDataHub `Boolean` `Enable`
 
-**UpdateNVRAM `Boolean` `Enable`**
+UpdateNVRAM `Boolean` `Enable`
 
-**UpdateSMBIOS `Boolean` `Enable`**
+UpdateSMBIOS `Boolean` `Enable`
 
-**UpdateSMBIOSMode `String` `Create`**
+UpdateSMBIOSMode `String` `Create`
+ 
+</details>
+<!-- PlatformInfo END -->
+<!-- UEFI START -->
+<details>
+<summary><h4>UEFI</h4></summary>
 
-**UseRawUuidEncoding** `Boolean` `False`**
+##### APFS
+**Enabled:**
+1. EnableJumpStart (Load APFS driver from APFS Container)
+2. HideVerbose (Hide APFS Verbose on boot)
 
-## UEFI
-### ConnectDrivers `Boolean` `enabled`
+##### AppleInput
+**Enabled:**
+1. GraphicsInputMirroring (Fixes for Keyboard input on certain stages)
 
-### APFS
-Leave everything default
+##### ConnectDrivers `Boolean` `enabled`
 
-### Audio
-For now leave everything default
-
-### Drivers (must-have)
+##### Drivers (must-have)
 1. `OpenRuntime.efi`
 2. `HFsPlus.efi`
 3. `OpenCanopy.efi`
 
-### Input
-Ignore
-
+##### Input
+**Enabled:**
+1. KeySupport<!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE -->
+ <!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE -->
 ### Output
 Ignore
 
@@ -310,15 +341,16 @@ Ignore
 1. `DeduplicateBootOrder`
 2. `ReleaseUsbOwnership` (Mainly for USB fixes)
 3. `RequestBootVarRouting` (Redirects some Variables for macOS)
-
 ---
+ </details>
+<!-- PlatformInfo END -->
  
 </details>
 <!-- OpenCore END -->
 
 <!-- POST-INSTALL START -->
 <details>
-<summary><h3>►  Post Install (Important!!)</h3></summary>
+<summary><h3>Post Install (Important!!)</h3></summary>
  
 Open Terminal.app and run those commands:
 ~~~
@@ -331,7 +363,7 @@ sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
 
 <!-- BENCHMARK START -->
 <details>
-<summary><h3>►  BenchMarks:</h3></summary>
+<summary><h3>BenchMarks:</h3></summary>
 
 #### Cinebench R23:
 ![Cinebench R23](/Docs/Images/Benchmarks/Cinebench_R23.png)
@@ -359,7 +391,7 @@ https://browser.geekbench.com/v5/cpu/5707123
 
 ---
 
-### Future info links to write here:
+<!-- LAST CHANGE ### Future info links to write here:
 https://www.tonymacx86.com/threads/uhd-630-no-hdmi-audio.265490/post-2178532
 https://github.com/acidanthera/bugtracker/issues/1189
 https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
@@ -368,9 +400,6 @@ https://www.tonymacx86.com/threads/an-idiots-guide-to-lilu-and-its-plug-ins.2600
 
 I will look for this tomorrow
 https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/#post-1885420
-
+-->
 
 If this guide has been useful for you, don't forget to give me a star ⭐️❤️
-
-
- @@@@@Shown on [config.plist](/RELEASE/EFI/OC/config.plist)
