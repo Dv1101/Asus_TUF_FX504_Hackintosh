@@ -1,7 +1,7 @@
  <!-- Markdown for HTML lol: https://michelf.ca/projects/php-markdown/extra/#markdown-attr -->
 # Hackintosh Guide for **Asus FX504GE** and **GD** models
 
-**This guide it's updated to OpenCore 0.7.9 and tested on my main device.**
+**This guide it's updated to OpenCore 0.8.3 and tested on my main device.**
 <!-- shields -->
 <div>
     <!-- downloads -->
