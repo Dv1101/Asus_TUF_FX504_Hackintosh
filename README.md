@@ -384,11 +384,6 @@ UpdateSMBIOSMode `String` `Create`
 <!-- PlatformInfo END -->
 </details>
 <!-- OpenCore END -->
-
----
-
-# Aditional Info
-
 <!-- POST-INSTALL START-->
 <details>
   <summary><h3>Post Installation</h3></summary>
@@ -413,6 +408,11 @@ sudo pmset tcpkeepalive 0
 
 </details>
 <!-- POST-INSTALL END -->
+
+---
+
+# Aditional Info
+
 <!-- BENCHMARK START -->
 <details>
   <summary><h3>BenchMarks</h3></summary>
