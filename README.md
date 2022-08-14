@@ -1,30 +1,26 @@
- <!-- Markdown for HTML lol: https://michelf.ca/projects/php-markdown/extra/#markdown-attr -->
-# Hackintosh Guide for **Asus FX504GE** and **GD** models
+# Hackintosh Guide for **Asus FX504GE**
+**This guide it's updated to OpenCore 0.8.3 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, and Monterrey.**
 
-**This guide it's updated to OpenCore 0.8.3 and tested on my main device.**
-<!-- shields -->
+<!-- START shields -->
 <div>
-    <!-- downloads -->
-    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases">
+    <!-- downloads --><a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases">
         <img src="https://img.shields.io/github/downloads/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/total" alt="downloads"/>
     </a>
-    <!-- version -->
-    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases/latest">
+    <!-- version --><a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore/releases/latest">
         <img src="https://img.shields.io/github/release/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore.svg" alt="latest version"/>
     </a>
-    <!-- platform -->
-    <a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore">
+     <!-- platform --><a href="https://github.com/RobyRew/ASUS-FX504GE-Hackintosh_OpenCore">
         <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg" alt="platform"/>
     </a>
 </div>
-</br></br>
+</br>
+<!-- END shields -->
 
 ![Asus FX504GE running macOS Big Sur](/Docs/Images/Asus-FX504-macOS.png)
 
-[Amazon Page](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) 1.199€ *purchased 18/09/2018*
+# Specifications
+Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) for this exact model, *it cost me 1.199€ when purchased on 18/09/2018*
 
-
-## Specs:
 | Component | Name |
 |:--- |:---:|
 | Motherboard:  | FX504GE **HM370** |
@@ -39,12 +35,9 @@
 | Ethernet: | Realtek RTL8111 |
 | Trackpad: | ELAN1200 Precision TouchPad (Type HID) |
 | Keyboard: | Standard PS/2 Keyboard |
+><strong>Note:</strong> NVME is not STOCK, has been replaced with the displayed one.
 
-![Asus FX504GE Layout](/Docs/Images/Guide/Asus-FX504GE-layout.png)
-These are all the external ports of the laptop. (**They all work**)
-
-### Working
-- [x] **Tested with macOS High Sierra, Mojave, Catalina, Big Sur, and Monterrey**
+# Working Status
 - [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
 - [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases) and [BlueToolFixup.kext](https://github.com/acidanthera/BrcmPatchRAM/releases))
 - [x] **Audio:** Realtek ALC255 (Thanks to [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) with layout-id=30 setted in Device Properties) without HDMI stable output connection.
@@ -55,12 +48,11 @@ These are all the external ports of the laptop. (**They all work**)
 - [x] **Shutdown:** Yes
 - [x] **Restart:** Yes
 - [x] **Sleep/Wake:** Yes
-
-### Not working
 - dGPU (Any support in Mojave and up).
 - Continuity Features (not working for now, waiting on https://openintelwireless.github.io/).
 - HDMI is not working correctly in combination with audio, I spent literally entire days researching on it, if you find something tell me please.
-
+![Asus FX504GE Layout](/Docs/Images/Guide/Asus-FX504GE-layout.png)
+>These are all the external ports of the laptop. (**They all work**)
 
 ```bash
 ```
@@ -116,7 +108,7 @@ These are all the external ports of the laptop. (**They all work**)
  
 <!-- ACPI START -->
 <details open>
-<summary><h4>ACPI</h4></summary>
+<summary>ACPI</summary>
 
 ##### Add
 1. `SSDT-PLUG.aml` (Allows for native CPU power management)
@@ -144,7 +136,7 @@ These are all the external ports of the laptop. (**They all work**)
 <!-- ACPI END -->
 <!-- Booter START -->
 <details>
-<summary><h4>Booter</h4></summary>
+<summary>Booter</summary>
  
 ##### Quirks
 **Enabled:**
@@ -159,7 +151,7 @@ These are all the external ports of the laptop. (**They all work**)
 <!-- Booter END -->
 <!-- DeviceProperties START -->
 <details>
-<summary><h4>DeviceProperties</h4></summary>
+<summary>DeviceProperties</summary>
 
 ##### Add
 Audio Card Properties:
@@ -198,7 +190,7 @@ iGPU (Integrated Graphics Processing Unit) Properties:
 <!-- DeviceProperties END -->
 <!-- Kernel START -->
 <details>
-<summary><h4>Kernel</h4></summary>
+<summary>Kernel</summary>
  
 ##### Add
 **ORDER MATTER!** Think about which kexts should load before which.
@@ -238,7 +230,7 @@ We need to force `IO80211Family.kext` from `System/Library/Extensions` to have c
 <!-- Kernel END -->
 <!-- Misc START -->
 <details>
-<summary><h4>Misc</h4></summary>
+<summary>Misc</summary>
 
 ##### Debug
 **Enabled:**
@@ -260,7 +252,7 @@ Remove from `EFI/OC/Tools` everything. This should be a clean `key`
 <!-- Misc END -->
 <!-- NVRAM START -->
 <details>
-<summary><h4>NVRAM</h4></summary>
+<summary>NVRAM</summary>
  
 ##### Add
 | 7C436110-AB2A-4BBB-A880-FE41995C9F82 | Dictionary | Keys / Values |
@@ -275,7 +267,7 @@ Remove from `EFI/OC/Tools` everything. This should be a clean `key`
 <!-- NVRAM END -->
 <!-- PlatformInfo START -->
 <details>
-<summary><h4>PlatformInfo</h4></summary>
+<summary>PlatformInfo</summary>
 
 ##### Automatic `enabled`
 
@@ -295,20 +287,16 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 | SystemUUID | String | *Generate your own with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)* |
 
 **These values are masked from the provided config file, make sure you enter your own before testing!**
-
 UpdateDataHub `Boolean` `Enable`
-
 UpdateNVRAM `Boolean` `Enable`
-
 UpdateSMBIOS `Boolean` `Enable`
-
 UpdateSMBIOSMode `String` `Create`
  
 </details>
 <!-- PlatformInfo END -->
 <!-- UEFI START -->
 <details>
-<summary><h4>UEFI</h4></summary>
+<summary>UEFI</summary>
 
 ##### APFS
 **Enabled:**
@@ -401,5 +389,7 @@ https://www.tonymacx86.com/threads/an-idiots-guide-to-lilu-and-its-plug-ins.2600
 I will look for this tomorrow
 https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/#post-1885420
 -->
+
+ <!-- Markdown for HTML lol: https://michelf.ca/projects/php-markdown/extra/#markdown-attr -->
 
 If this guide has been useful for you, don't forget to give me a star ⭐️❤️
