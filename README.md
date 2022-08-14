@@ -87,7 +87,7 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
 # GUIDE OF INSTALLATION
 <!-- BOOTABLE START -->
 <details>
-<summary><h3>Making the Booteable USB</h3></summary>
+<summary><h3>Making the Bootable USB</h3></summary>
     <h3>From macOS:</h3>
 <p><a href="https://support.apple.com/en-us/HT201372"</a>Link to Apple's Guide</p>
 
