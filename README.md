@@ -19,46 +19,72 @@
 ![Asus FX504GE running macOS Big Sur](/Docs/Images/Asus-FX504-macOS.png)
 
 # Specifications
-Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) for this exact model, *it cost me 1.199€ when purchased on 18/09/2018*
+Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_dp_gUF8FbYQW48NV) for this exact model, *it cost me `1.199€` when purchased on 18/09/2018*
 
 | Component | Name |
-|:--- |:---:|
+|:--- |:---|
 | Motherboard:  | FX504GE **HM370** |
-| CPU: | Intel i7-8750H |
-| RAM: | 16GB **SK Hyinix** HMA82GS6CJR8N-VK 2666Mhz |
-| iGPU: | Intel UHD 630 (Mobile) |
-| dGPU: | NVIDIA GeForce GTX 1050 Ti (DISABLED) |
-| NVMe: | Samsung 970 EVO Plus |
-| HDD: | HGST HTS721010A9E630 |
-| Wifi/BT: | Intel(R) Wireless-AC 9560 160MHz (Type CNVi) |
-| Audio: | RealTek ALC255 |
-| Ethernet: | Realtek RTL8111 |
-| Trackpad: | ELAN1200 Precision TouchPad (Type HID) |
-| Keyboard: | Standard PS/2 Keyboard |
-><strong>Note:</strong> NVME is not STOCK, has been replaced with the displayed one.
+| CPU: | **Intel** i7-8750H |
+| RAM: | **SK Hyinix** HMA82GS6CJR8N-VK 16GB 2666Mhz |
+| iGPU: | **Intel** UHD 630 (Mobile) |
+| dGPU: | **nVidia** GeForce GTX 1050 Ti (DISABLED) |
+| NVMe: | **Samsung** 970 EVO Plus |
+| HDD: | **HGST** HTS721010A9E630 |
+| Wifi/BT: | **Intel** Wireless-AC 9560 160MHz (Type CNVi) |
+| Audio: | **RealTek** ALC255 |
+| Ethernet: | **RealTek** RTL8111 |
+| Trackpad: | **ELAN1200** Precision TouchPad (Type HID) |
+| Keyboard: | PS/2 Keyboard (ISO Spain)|
+><strong>Note:</strong> The NVMe is the only component that has been replaced from STOCK
 
 # Working Status
-- [x] **Wifi** (Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) and loading from system the kext: `IO80211Family.kext`)
-- [x] **Bluetooth:** (Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases) and [BlueToolFixup.kext](https://github.com/acidanthera/BrcmPatchRAM/releases))
-- [x] **Audio:** Realtek ALC255 (Thanks to [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) with layout-id=30 setted in Device Properties) without HDMI stable output connection.
-- [x] **USB:** All internal and external ports (Thanks to SSDT-EC-USBX-LAPTOP.aml)
-- [x] **Ethernet:** Realtek RTL8111 (Thanks to RealtekRTL8111.kext)
-- [x] **Trackpad:** (Working thanks to VoodooI2C.kext, VoodooI2CHID.kext and SSDT-XOSI.aml)
-- [x] **HDMI:** Works almost perfect wen without audio.
-- [x] **Shutdown:** Yes
-- [x] **Restart:** Yes
-- [x] **Sleep/Wake:** Yes
-- dGPU (Any support in Mojave and up).
-- Continuity Features (not working for now, waiting on https://openintelwireless.github.io/).
-- HDMI is not working correctly in combination with audio, I spent literally entire days researching on it, if you find something tell me please.
-![Asus FX504GE Layout](/Docs/Images/Guide/Asus-FX504GE-layout.png)
->These are all the external ports of the laptop. (**They all work**)
+ - ### **Fully Working**
+    - Built-In Display
+    - [All USB Ports](/Docs/Images/Guide/Asus-FX504GE-layout.png)
+    - Jack 3.5mm, Speakers & Microphone
+    - DC-IN & Battery
+    - NVMe & HDD
+    - Camera
+    - Ethernet
+    - Keyboard
+    - Trackpad
 
-```bash
-```
+ - ### **Partially Working**
+    - WiFi
+    - Bluetooth
+    - HDMI Port
+    - Continuity Features (Apple Ecosystem Fancy Things)
 
-# INSTALLATION GUIDE
+- ### **Not Working**
+    - dGPU *(nVidia GTX 1050Ti)*
 
+<details open>
+    <summary><h3>&nbsp;&nbsp;🔍&nbsp;&nbsp;In-depth Info</h3></summary>
+
+| Name | Solution |
+|:--- |:--- |
+| Built-In Display  | Works thanks to `SSDT-PNLF-CFL.aml` *(Backlight Fix)* and `WhateverGreen.kext` *(iGPU Fixes)*. |
+| All USB Ports | Thanks to `USBMap.aml` *(Ports mapped for macOS)* and `SSDT-EC-USBX.aml`. |
+| Jack 3.5mm, Speakers & Microphone | Thanks to `AppleALC.kext` *(Audio Driver)* and layout setted to "30" (Dec) or "1E000000" (Hex). |
+| DC-IN & Battery| `VirtualSMC.kext` with `SMCBatteryManager.kext` allows management off charging and Battery Info. |
+| NVMe & HDD | It used to be something tricky but having SATA on AHCI Mode on *BIOS/UEFI* and latest firmware for the NVMe is enough. |
+| Camera | Is connected via Internal USB and it works. |
+| Ethernet | Thanks to `RealtekRTL8111.kext` (Ethernet Driver). |
+| Keyboard | Thanks to `VoodooPS2.kext` (Driver for PS2 devices). |
+| Trackpad | Thanks to `SSDT-XOSI.aml`(Make some Windows Features Avaible for macOS too) and with `VoodooI2C.kext` in combination with `VoodooI2CHID.kext`(Driver for I2C and HID devices like my trackpad). |
+| PowerOff, Reboot & Sleep | Working thanks to having correct configs for CPU, iGPU, disabled dGPU, mapped USB Ports and executed these commands after macOS installation: `sudo pmset autopoweroff 0`, `sudo pmset powernap 0`, `sudo pmset standby 0`, `sudo pmset proximitywake 0`, `sudo pmset tcpkeepalive 0`.|
+| | |
+| WiFi | Thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases) (Driver for Intel WiFi Card) and loading from system the kext: `IO80211Family.kext`. |
+| Bluetooth | Thanks to [IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases) and [BlueToolFixup.kext](https://github.com/acidanthera/BrcmPatchRAM/releases). |
+| HDMI Port | Thanks to DeviceProperties Patch from [MegaStood Guide](https://github.com/MegaStood/Hackintosh-FX504GE-ES72#hdmi). But Audio over HDMI is totally broken and **Hi-Res Displays** can cause visual bugs or unstable connections. |
+| Continuity Features | With the exception of **"AirDrop"** And **"Apple Watch AutoLogin"** all other Features work thanks to [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases),[IntelBluetoothFirmware.kext](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases),[FeatureUnlock.kext](https://github.com/acidanthera/FeatureUnlock/releases); Sidecar, AirPlay to Mac, NightShift and Universal Control are working [(More Info)](https://github.com/acidanthera/FeatureUnlock#featureunlock). |
+| | |
+| dGPU | This laptop use Optimus and dGPU is not usable on macOS and Mojave dropped support for [nVidia Web Drivers](https://www.insanelymac.com/forum/topic/324195-nvidia-web-driver-updates-for-macos-high-sierra-update-nov-13-2020/) (Not even try this...). |
+</details>
+
+---
+
+# GUIDE OF INSTALLATION
 <!-- BOOTABLE START -->
 <details>
 <summary><h3>Making the Booteable USB</h3></summary>
@@ -90,10 +116,9 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
     
 </details>
 <!-- BOOTABLE END -->
-
 <!-- BIOS START -->
 <details>
-<summary><h3>BIOS Settings:</h3></summary>
+<summary><h3>BIOS Settings</h3></summary>
  
 - Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
@@ -104,11 +129,16 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
 
 <!-- OpenCore START -->
 <details>
-<summary><h3>OpenCore Configuration</h3></summary>
- 
+<summary><h3>confi.plist Explanation</h3></summary>
+  
+>Here (Under these Dropdown Menus) are written only **Enabled** Parameters, Leave everything default on a supposedly new `sample.conf`, I have explained what does and why every parameter, I hope you understand something.
+
+
 <!-- ACPI START -->
 <details open>
 <summary>ACPI</summary>
+
+>**ACPI** are related mainly to modifying or patching the device firmware (DSDT).
 
 ##### Add
 1. `SSDT-PLUG.aml` (Allows for native CPU power management)
@@ -137,6 +167,8 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
 <!-- Booter START -->
 <details>
 <summary>Booter</summary>
+  
+>**Booter** related when booting.
  
 ##### Quirks
 **Enabled:**
@@ -152,6 +184,8 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
 <!-- DeviceProperties START -->
 <details>
 <summary>DeviceProperties</summary>
+  
+>**DeviceProperties** is related to explaining to the SO the devices you have and info you want to "fake" to them.
 
 ##### Add
 Audio Card Properties:
@@ -191,6 +225,8 @@ iGPU (Integrated Graphics Processing Unit) Properties:
 <!-- Kernel START -->
 <details>
 <summary>Kernel</summary>
+
+>**Kernel** are things related with kernel an ".kext"(kernel extension).
  
 ##### Add
 **ORDER MATTER!** Think about which kexts should load before which.
@@ -232,6 +268,8 @@ We need to force `IO80211Family.kext` from `System/Library/Extensions` to have c
 <details>
 <summary>Misc</summary>
 
+>**Misc** things related with Visual and security also Boot Picker of OpenCanopy.
+
 ##### Debug
 **Enabled:**
 1. `DisableWatchDog` (Disables Timeouts on Boot wen Debug
@@ -253,6 +291,8 @@ Remove from `EFI/OC/Tools` everything. This should be a clean `key`
 <!-- NVRAM START -->
 <details>
 <summary>NVRAM</summary>
+
+>**NVRAM** things for the *Non-volatile memory*
  
 ##### Add
 | 7C436110-AB2A-4BBB-A880-FE41995C9F82 | Dictionary | Keys / Values |
@@ -268,6 +308,8 @@ Remove from `EFI/OC/Tools` everything. This should be a clean `key`
 <!-- PlatformInfo START -->
 <details>
 <summary>PlatformInfo</summary>
+
+>**PlatformInfo* is mainly for "faking" your macOS model so it fits better with macOS expected specifications.
 
 ##### Automatic `enabled`
 
@@ -287,9 +329,13 @@ Download [GenSMBIOS (opens new window)](https://github.com/corpnewt/GenSMBIOS), 
 | SystemUUID | String | *Generate your own with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)* |
 
 **These values are masked from the provided config file, make sure you enter your own before testing!**
+  
 UpdateDataHub `Boolean` `Enable`
+  
 UpdateNVRAM `Boolean` `Enable`
+  
 UpdateSMBIOS `Boolean` `Enable`
+  
 UpdateSMBIOSMode `String` `Create`
  
 </details>
@@ -297,6 +343,8 @@ UpdateSMBIOSMode `String` `Create`
 <!-- UEFI START -->
 <details>
 <summary>UEFI</summary>
+
+>**UEFI** have multiple porpouses for all things.
 
 ##### APFS
 **Enabled:**
@@ -310,62 +358,90 @@ UpdateSMBIOSMode `String` `Create`
 ##### ConnectDrivers `Boolean` `enabled`
 
 ##### Drivers (must-have)
-1. `OpenRuntime.efi`
-2. `HFsPlus.efi`
-3. `OpenCanopy.efi`
+1. `OpenRuntime.efi` (OpenCore Engine)
+2. `HFsPlus.efi` (Driver for HFsPlus on every hadrware)
+3. `OpenCanopy.efi` (Fancy Boot Picker)
 
 ##### Input
 **Enabled:**
-1. KeySupport<!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE -->
- <!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE --><!-- LAST CHANGE -->
-### Output
-Ignore
+1. `KeySupport`
 
-### ProtocolsOverride
-Ignore
-
-### Quirks
+##### Output
 **Enabled:**
-1. `DeduplicateBootOrder`
+1. `ProvideConsoleGop`
+
+##### ProtocolsOverride
+**Enabled:**
+1. `FirmwareVolume`
+
+##### Quirks
+**Enabled:**
+1. `EnableVectorAcceleration`
 2. `ReleaseUsbOwnership` (Mainly for USB fixes)
 3. `RequestBootVarRouting` (Redirects some Variables for macOS)
 ---
  </details>
 <!-- PlatformInfo END -->
- 
 </details>
 <!-- OpenCore END -->
 
-<!-- POST-INSTALL START -->
+---
+
+# Aditional Info
+
+<!-- POST-INSTALL START-->
 <details>
-<summary><h3>Post Install (Important!!)</h3></summary>
+  <summary><h3>Post Installation</h3></summary>
  
 Open Terminal.app and run those commands:
 ~~~
-sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
-sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
+sudo pmset autopoweroff 0
+sudo pmset powernap 0
+sudo pmset standby 0
+sudo pmset proximitywake 0
+sudo pmset tcpkeepalive 0
 ~~~
+>These 5 commands help fixing possible Sleep/Wake Issues
+  
+~~~
+  - sudo rm /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
+  - sudo rm /Library/Preferences/SystemConfiguration/preferences.plist
+~~~
+>These 2 commands help fixing possible iCloud Ban/iMessages Ban or WiFi/Ethernet Issues (Use only if you want or need)
+
 ---
+
 </details>
 <!-- POST-INSTALL END -->
-
 <!-- BENCHMARK START -->
 <details>
-<summary><h3>BenchMarks:</h3></summary>
+  <summary><h3>BenchMarks</h3></summary>
 
-#### Cinebench R23:
+<details open>
+<summary>Cinebench R23</summary>
+
 ![Cinebench R23](/Docs/Images/Benchmarks/Cinebench_R23.png)
 
-#### GeekBench 5:
+</details>
+
+<details open>
+<summary>GeekBench 5</summary>
+
 ![GeekBench 5_CPU Score](/Docs/Images/Benchmarks/GeekBench5_CPU.png)
 ![GeekBench 5_GPU Score](/Docs/Images/Benchmarks/GeekBench5_GPU.png)
 https://browser.geekbench.com/v5/cpu/5707123
+
 ---
 
 </details>
+
+</details>
+
 <!-- BENCHMARK END -->
 
-# Credits
+<!-- CREDITS START -->
+<details>
+<summary><h3>Credits</h3></summary>
 
 [Apple](https://apple.com) (macOS)
 
@@ -373,23 +449,12 @@ https://browser.geekbench.com/v5/cpu/5707123
 
 [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#starting-point) (Guide)
 
-[PoomSmart](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh) (Some ideas for my build)
+[PoomSmart](https://github.com/PoomSmart/ASUS-FX504GE-Hackintosh) (Base Repo)
 
-[MegaStood](https://github.com/MegaStood/Hackintosh-FX504GE-ES72) (Properties and boot argument for HDMI output)
+[MegaStood](https://github.com/MegaStood/Hackintosh-FX504GE-ES72) (iGPU Properties)
 
 ---
 
-<!-- LAST CHANGE ### Future info links to write here:
-https://www.tonymacx86.com/threads/uhd-630-no-hdmi-audio.265490/post-2178532
-https://github.com/acidanthera/bugtracker/issues/1189
-https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
-https://github.com/acidanthera/WhateverGreen
-https://www.tonymacx86.com/threads/an-idiots-guide-to-lilu-and-its-plug-ins.260063/#Hacktool
-
-I will look for this tomorrow
-https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/#post-1885420
--->
-
- <!-- Markdown for HTML lol: https://michelf.ca/projects/php-markdown/extra/#markdown-attr -->
-
+</details>
+<!-- CREDITS END -->
 If this guide has been useful for you, don't forget to give me a star ⭐️❤️
