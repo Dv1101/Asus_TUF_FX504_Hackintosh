@@ -120,7 +120,7 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
 <details>
 <summary><h3>BIOS Settings</h3></summary>
  
-- Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/ASUS%20TUF%20GAMING%20FX504/HelpDesk_Download/)
+- Make Sure you have [Latest BIOS v323](https://www.asus.com/supportonly/FX504GE/HelpDesk_BIOS/)
 - After Updating the BIOS, stock configuration works, so don't worry about this part.
 ---
  
