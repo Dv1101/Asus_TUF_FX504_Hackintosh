@@ -773,7 +773,7 @@
 			<key>HideAuxiliary</key>
 			<false/>
 			<key>LauncherOption</key>
-			<string>Enabled</string>
+			<string>Full</string>
 			<key>LauncherPath</key>
 			<string>Default</string>
 			<key>PickerAttributes</key>
