@@ -279,7 +279,7 @@ We need to force `IO80211Family.kext` from `System/Library/Extensions` to have c
 
 1. `AllowSetDefault` (Allow setting a Default Boot entry on the picker)
 
-2 `BlacklistAppleUpdate` (Stop reciving firmware updates intended for real Mac hardware)
+2. `BlacklistAppleUpdate` (Stop reciving firmware updates intended for real Mac hardware)
 - `DmgLoading` Signed
 - `ScanPolicy` 0
 - `SecureBootModel` Default
