@@ -440,7 +440,7 @@ https://browser.geekbench.com/v5/cpu/5707123
 <!-- BENCHMARK END -->
 
 <!-- CREDITS START -->
-<details>
+<details open>
 <summary><h3>Credits</h3></summary>
 
 [Apple](https://apple.com) (macOS)
