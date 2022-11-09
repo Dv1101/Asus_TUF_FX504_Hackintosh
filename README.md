@@ -1,5 +1,5 @@
 # Hackintosh Guide for **Asus FX504GE**
-**This guide it's updated to OpenCore 0.8.3 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, and Monterrey.**
+**This guide it's updated to OpenCore 0.8.6 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey and Ventura.**
 
 <!-- START shields -->
 <div>
@@ -91,11 +91,14 @@ Here's the [Amazon Link](https://www.amazon.es/dp/B07D4W2CY6/ref=cm_sw_em_r_mt_d
     <h3>From macOS:</h3>
 <p><a href="https://support.apple.com/en-us/HT201372"</a>Link to Apple's Guide</p>
 
-**Download installers:** [Monterrey](https://apps.apple.com/es/app/macos-monterey/id1576738294?mt=12) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
+**Download installers:** [Ventura](https://apps.apple.com/us/app/macos-ventura/id1638787999) - [Monterrey](https://apps.apple.com/es/app/macos-monterey/id1576738294) - [Big Sur](https://itunes.apple.com/us/app/macos-big-sur/id1526878132) - [Catalina](https://itunes.apple.com/us/app/macos-catalina/id1466841314) - [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828) - [High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741)
+
+[(Alternative Download (Mr. Machintosh Post))](https://mrmacintosh.com/how-to-download-macos-catalina-mojave-or-high-sierra-full-installers/)
 
 1. Connect a >=16 GB pendrive.
 2. Open *Disk Utility* and Erase the USB with the name: *MyVolume*.
 3. Open *Terminal* and use the proper commands for your macOS installer:
+- Ventura: `sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 - Monterrey: `sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 - Big Sur: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 - Catalina: `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
@@ -389,6 +392,13 @@ UpdateSMBIOSMode `String` `Create`
 <!-- POST-INSTALL START-->
 <details>
   <summary><h3>Post Installation</h3></summary>
+  
+Fixing Trackpad - What I identified is:
+- 2 fast clicks = 1 Force Click
+- 1 click = nothing on most parts of OS or bug with Voodoo2IC
+- Small issues with trackpad...
+Here's the Settings I Use for myself (Ventura's Settings are a mess)
+![My Trackpad Settings](/Docs/Images/Postinstall-Trackpad.png)
  
 Open Terminal.app and run those commands:
 ~~~
