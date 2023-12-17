@@ -193,7 +193,11 @@
 				<data>mz4AAA==</data>
 				<key>disable-external-gpu</key>
 				<data>AQAAAA==</data>
-				<key>enable-backlight-registers-fix</key>
+				<key>enable-backlight-registers-alternative-fix</key>
+				<data>AQAAAA==</data>
+				<key>enable-hdmi-dividers-fix</key>
+				<data>AQAAAA==</data>
+				<key>disable-hdmi-patches</key>
 				<data>AQAAAA==</data>
 				<key>agdpmod</key>
 				<data>dml0OTY5Ng==</data>
