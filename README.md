@@ -1,5 +1,5 @@
 # Hackintosh Guide for **Asus FX504GE**
-**This guide it's updated to OpenCore 0.8.6 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey and Ventura.**
+**This guide it's updated to OpenCore 0.9.7 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura and Sonoma.**
 
 <!-- START shields -->
 <div>
