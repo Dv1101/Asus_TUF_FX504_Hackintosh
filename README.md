@@ -1,5 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE**
-Archived because I bought a MacBook Air M1 2020
+> Archived because I bought a MacBook Air M1 2020
+
 **This guide it's updated to OpenCore 0.9.7 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura and Sonoma.**
 
 <!-- START shields -->
