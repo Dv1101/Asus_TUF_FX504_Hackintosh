@@ -7,7 +7,7 @@
 >
 > Changes By Dhruv Varia ~ 25/09/2024
 
-**This guide it's updated to OpenCore 0.9.7 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura and Sonoma.**
+**This guide it's updated to OpenCore 1.0.3 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura, Sonoma and Sequoia.**
 
 <!-- START shields -->
 <div>
