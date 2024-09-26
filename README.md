@@ -1,7 +1,13 @@
-# Hackintosh Guide for **Asus FX504GE**
-> Archived because I bought a MacBook Air M1 2020
+# Hackintosh Guide for **Asus FX504GE/GD**
+> Added macOS Sequoia (15) Support
+> Updated to OpenCore 1.0.2, Updated all Kexts and Drivers
+> Changed SMBios to Macmini8,1 because my TUF is broken and i want to use it as a macmini and display over HDMI.
+> Since airportitlwm is not updated to support for Sequoia. I have used Itlwm and Heliport, Manually modified IntelBTPatch to temporarily workaroud for Wifi and Bluetooth. (I will update it as soon as it gets fixed)
+> Set SecureBootModel to Disable (It will cause bootloop macos installer and will not load kext on macos 14.4 and Higher)
+>
+> Changes By Dhruv Varia ~ 25/09/2024
 
-**This guide it's updated to OpenCore 0.9.7 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura and Sonoma.**
+**This guide it's updated to OpenCore 1.0.3 and tested on my main device with macOS High Sierra, Mojave, Catalina, Big Sur, Monterrey, Ventura, Sonoma and Sequoia.**
 
 <!-- START shields -->
 <div>
