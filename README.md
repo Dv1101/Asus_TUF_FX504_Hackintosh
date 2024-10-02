@@ -1,6 +1,6 @@
 # Hackintosh Guide for **Asus FX504GE/GD**
 > Added macOS Sequoia (15) Support
-> Updated to OpenCore 1.0.2, Updated all Kexts and Drivers
+> Updated to OpenCore 1.0.1, Updated all Kexts and Drivers
 > Changed SMBios to Macmini8,1 because my TUF is broken and i want to use it as a macmini and display over HDMI.
 > Since airportitlwm is not updated to support for Sequoia. I have used Itlwm and Heliport, Manually modified IntelBTPatch to temporarily workaroud for Wifi and Bluetooth. (I will update it as soon as it gets fixed)
 > Set SecureBootModel to Disable (It will cause bootloop macos installer and will not load kext on macos 14.4 and Higher)
